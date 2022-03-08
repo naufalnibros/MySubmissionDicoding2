@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MySubmissionDicoding2</string>
+    <string name="search_user">Search User</string>
+    <string name="tab_detail_1">FOLLOWERS</string>
+    <string name="tab_detail_2">FOLLOWING</string>
+    <string name="nama_panjang">Nama Panjang</string>
+    <string name="username">username</string>
+    <string name="location">location</string>
+    <string name="work">Work</string>
+    <string name="jml_followers">12 Followers</string>
+    <string name="jml_following">12 Following</string>
+    <string name="nama_user">nama user</string>
+    <string name="id_user">id_user</string>
+</resources>
