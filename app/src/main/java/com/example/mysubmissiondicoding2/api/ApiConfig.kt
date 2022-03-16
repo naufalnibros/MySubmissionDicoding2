@@ -1,4 +1,4 @@
-package com.example.mysubmissiondicoding2.data.Api
+package com.example.mysubmissiondicoding2.api
 
 import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient

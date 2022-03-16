@@ -2,10 +2,12 @@ package com.example.mysubmissiondicoding2.ui.detail
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mysubmissiondicoding2.R
+import com.example.mysubmissiondicoding2.data.model.User
 import com.example.mysubmissiondicoding2.databinding.FragmentFollowBinding
 import com.example.mysubmissiondicoding2.ui.main.UserAdapter
 
@@ -25,8 +27,11 @@ class FragmentFollowing : Fragment(R.layout.fragment_follow) {
         _binding = FragmentFollowBinding.bind(view)
 
         adapter = UserAdapter()
-        adapter.notifyDataSetChanged()
-
+        adapter.setOnClickCallback(object :UserAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: User) {
+                Toast.makeText(view.context, "Berhasil", Toast.LENGTH_SHORT).show()
+            }
+        })
         binding.apply {
             rvFollowUser.setHasFixedSize(true)
             rvFollowUser.layoutManager = LinearLayoutManager(activity)
@@ -37,7 +42,10 @@ class FragmentFollowing : Fragment(R.layout.fragment_follow) {
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
         viewModel.setListFollowing(username)
         viewModel.getListFollowing().observe(viewLifecycleOwner,{
-            if (it != null){
+            if (it?.isEmpty() == true){
+                binding.tvEmpty.visibility = View.VISIBLE
+                showLoading(false)
+            }else{
                 adapter.setList(it)
                 showLoading(false)
             }

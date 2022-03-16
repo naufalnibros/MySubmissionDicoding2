@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class SectionPagerAdapter(activity: AppCompatActivity,data:Bundle):FragmentStateAdapter(activity) {
 
     private val fragmentBundle :Bundle
+
     init {
         fragmentBundle = data
     }

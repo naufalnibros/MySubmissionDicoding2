@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mysubmissiondicoding2.data.Api.ApiConfig
+import com.example.mysubmissiondicoding2.api.ApiConfig
 import com.example.mysubmissiondicoding2.data.model.User
 import retrofit2.Call
 import retrofit2.Callback

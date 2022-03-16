@@ -7,8 +7,21 @@
     <string name="username">username</string>
     <string name="location">location</string>
     <string name="work">Work</string>
-    <string name="jml_followers">12 Followers</string>
-    <string name="jml_following">12 Following</string>
+    <string name="jml_followers">0 Followers</string>
+    <string name="jml_following">0 Following</string>
     <string name="nama_user">nama user</string>
     <string name="id_user">id_user</string>
+    <string name="repository">Repository</string>
+    <string name="data_empty">Data empty</string>
+    <string name="search">search</string>
+    <string name="cancel">cancel</string>
+    <string name="message_cancel">Apakah Anda ingin membatalkan menghapus data?</string>
+    <string name="delete">delete</string>
+    <string name="message_delete">Apakah Anda yakin ingin menghapus data?</string>
+    <string name="yes">yes</string>
+    <string name="deleted">data has been deleted</string>
+    <string name="no">No</string>
+    <string name="favorite">favorite</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="light_mode">Light mode</string>
 </resources>
