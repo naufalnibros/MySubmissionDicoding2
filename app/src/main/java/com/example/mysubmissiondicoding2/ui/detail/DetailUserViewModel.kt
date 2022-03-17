@@ -58,8 +58,7 @@ class DetailUserViewModel(application: Application) : ViewModel() {
     fun delete(favoriteUser: FavoriteUser) {
         mFavoriteUserRepository.delete(favoriteUser)
     }
-    fun checkUser(favoriteUser: FavoriteUser){
-        mFavoriteUserRepository.checkUser(favoriteUser)
-    }
+
+    fun checkUser(id: Int) = mFavoriteUserRepository.checkUser(id)
 
 }

@@ -1,10 +1,10 @@
 package com.example.mysubmissiondicoding2.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
@@ -36,6 +36,17 @@ class DetailUserActivity : AppCompatActivity() {
         viewModel.isLoading.observe(this,{
             showLoadingDetail(it)
         })
+
+        viewModel.checkUser(id).observe(this, {
+            if (it == 0) {
+                binding.btnFavourite.isChecked = false
+                _isChecked = false
+            }else{
+                binding.btnFavourite.isChecked = true
+                _isChecked = true
+            }
+        })
+
         viewModel.getUserData().observe(this,{
                 binding.apply {
                     tvNamaUserDetail.text = it.name
@@ -66,16 +77,6 @@ class DetailUserActivity : AppCompatActivity() {
                         .into(imageProfile)
             }
         })
-
-
-        val count = viewModel.getAllFavUser()
-        if (count != null){
-            binding.btnFavourite.isChecked = false
-            _isChecked = false
-        }else{
-            binding.btnFavourite.isChecked = true
-            _isChecked = true
-        }
 
         binding.btnFavourite.setOnClickListener {
             _isChecked = !_isChecked

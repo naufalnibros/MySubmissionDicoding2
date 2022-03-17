@@ -37,11 +37,11 @@ interface FavoriteUserDao {
     fun addToFavorite(favoriteUser: FavoriteUser)
 
     @Query("SELECT * from favoriteuser ORDER BY id ASC")
-    fun getAllUser():LiveData<List<FavoriteUser>>
+    fun getAllUser(): LiveData<List<FavoriteUser>>
 
     @Delete
     fun delete(favoriteUser: FavoriteUser)
 
-    @Query("SELECT * from favoriteuser WHERE favoriteuser.id = :id")
-    fun checkUser(id:Int): Int
+    @Query("SELECT count(id) from favoriteuser WHERE id = :id")
+    fun checkUser(id:Int): LiveData<Int>
 }
